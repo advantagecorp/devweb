@@ -8,25 +8,25 @@ rules:                                                          # List of the ru
     arguments:                                                  # The arguments which a given type is expecting (at least one entry)
       - transactionName: Go to Accounts                                  # The name of the transaction for which we want to calculate the average
         threshold:                                              
-        - averageTime: 1600
+        - averageTime: 250
       - transactionName: Go to Current USD account                                  # The name of the transaction for which we want to calculate the average
         threshold:                                              
-        - averageTime: 1600
+        - averageTime: 500
       - transactionName: New transfer                                  # The name of the transaction for which we want to calculate the average
         threshold:                                              
-        - averageTime: 1600  
+        - averageTime: 400  
       - transactionName: Dashboard                                  # The name of the transaction for which we want to calculate the average
         threshold:                                              
-        - averageTime: 1600 
+        - averageTime: 1200 
       - transactionName: View all transactions                                  # The name of the transaction for which we want to calculate the average
         threshold:                                              
-        - averageTime: 1600 
+        - averageTime: 300 
       - transactionName: Logout                                  # The name of the transaction for which we want to calculate the average
         threshold:                                              
-        - averageTime: 1600 
+        - averageTime: 200 
       - transactionName: Login                                  # The name of the transaction for which we want to calculate the average
         threshold:                                              
-        - averageTime: 1600                                    # The average time in milliseconds above which the SLA rule will fail                                  # The average time in milliseconds above which the SLA rule will fail
+        - averageTime: 1500                                    # The average time in milliseconds above which the SLA rule will fail                                  # The average time in milliseconds above which the SLA rule will fail
   - rule: Transaction Response Time
     type: averageTRT 
     enabled: false
