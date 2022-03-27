@@ -20,12 +20,7 @@ rules:                                                          # List of the ru
     type: failureRate                                         # The transaction type
     enabled: false                                            # Allows the user to enable or disable a specific rule
     arguments:                                                # The arguments which a given type is expecting (one entry)
-      percentage: 10                                          # The percentage threshold above which the SLA rule will fail
-  - rule: Total Passing Transactions                          # The SLA rule validates that the amount of passed transactions reach a minimum threshold.
-    type: passingTransactions
-    enabled: true
-    arguments:
-      amount: 25                                              # The minimum amount of passed transactions for the SLA to pass. 
+      percentage: 10                                          # The percentage threshold above which the SLA rule will fail                                           # The minimum amount of passed transactions for the SLA to pass. 
   - rule: Transaction Rank Percentile                       # The SLA rule validates if transaction duration measurements meet percentile rank specified in the arguments.
     type: TRP                                                 
     enabled: true
