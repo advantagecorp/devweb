@@ -1,0 +1,10 @@
+parameters:
+- blockSize: auto
+  columnName: key
+  fileName: keys.dat
+  firstDataRow: 1
+  name: key
+  nextRow: random
+  nextValue: iteration
+  onEnd: loop
+  type: csv
