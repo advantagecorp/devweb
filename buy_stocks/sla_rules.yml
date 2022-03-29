@@ -1,0 +1,67 @@
+enabled: true                                                   # Allows the user to enable or disable all the rules in a category 
+reporterType: JUnit                                             # Allows to change the reporter type, supported reporters: [JUnit, Tap]
+reportName: sla_junit_report.xml                                # The report name, which is generated inside the script directory
+rules:                                                          # List of the rules which the SLA enforces
+  - rule: Transaction Response Time                             # The SLA rule measures the average duration of the given transactions
+    type: averageTRT                                            # The transaction type
+    enabled: true                                               # Allows the user to enable or disable a specific rule
+    arguments:                                                  # The arguments which a given type is expecting (at least one entry)
+      - transactionName: Sell                                  # The name of the transaction for which we want to calculate the average
+        threshold:                                              
+        - averageTime: 250
+      - transactionName: Go to Current USD account                                  # The name of the transaction for which we want to calculate the average
+        threshold:                                              
+        - averageTime: 500
+      - transactionName: New transfer                                  # The name of the transaction for which we want to calculate the average
+        threshold:                                              
+        - averageTime: 400  
+      - transactionName: Dashboard                                  # The name of the transaction for which we want to calculate the average
+        threshold:                                              
+        - averageTime: 1200 
+      - transactionName: View all transactions                                  # The name of the transaction for which we want to calculate the average
+        threshold:                                              
+        - averageTime: 300 
+      - transactionName: Logout                                  # The name of the transaction for which we want to calculate the average
+        threshold:                                              
+        - averageTime: 200 
+      - transactionName: Login                                  # The name of the transaction for which we want to calculate the average
+        threshold:                                              
+        - averageTime: 1500                                    # The average time in milliseconds above which the SLA rule will fail                                  # The average time in milliseconds above which the SLA rule will fail
+  - rule: Transaction Response Time
+    type: averageTRT 
+    enabled: false
+    arguments:
+      - transactionName: Sell
+        threshold:
+        - averageTime: 100
+      - transactionName: Go to Current USD account
+        threshold:
+        - averageTime: 100
+      - transactionName: New transfer
+        threshold:
+        - averageTime: 100
+      - transactionName: Dashboard
+        threshold:
+        - averageTime: 100
+      - transactionName: View all transactions
+        threshold:
+        - averageTime: 100
+      - transactionName: Logout
+        threshold:
+        - averageTime: 100
+      - transactionName: Login
+        threshold:
+        - averageTime: 100
+  - rule: Failing Transactions to Total Transaction Ratio     # The SLA rule measures the percentage of total failed transactions
+    type: failureRate                                         # The transaction type
+    enabled: false                                            # Allows the user to enable or disable a specific rule
+    arguments:                                                # The arguments which a given type is expecting (one entry)
+      percentage: 10                                          # The percentage threshold above which the SLA rule will fail                                           # The minimum amount of passed transactions for the SLA to pass. 
+  - rule: Transaction Rank Percentile                       # The SLA rule validates if transaction duration measurements meet percentile rank specified in the arguments.
+    type: TRP                                                 
+    enabled: true
+    arguments:
+      - transactionName: Sell                                # The name of the transaction for which we want to calculate the transaction percentile rank
+        ranges: [2000, 5000, 10000]                           # Defines the duration ranges in milliseconds. For example, 5000 defines the range 0-5000.
+        threshold:                                            # The number of threshold ranks must match the number of ranges. 
+          ranks: [88, 98, 100]
