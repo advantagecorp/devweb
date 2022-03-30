@@ -59,7 +59,7 @@ rules:                                                          # List of the ru
       percentage: 10                                          # The percentage threshold above which the SLA rule will fail                                           # The minimum amount of passed transactions for the SLA to pass. 
   - rule: Transaction Rank Percentile                       # The SLA rule validates if transaction duration measurements meet percentile rank specified in the arguments.
     type: TRP                                                 
-    enabled: true
+    enabled: false
     arguments:
       - transactionName: Go to Accounts                                # The name of the transaction for which we want to calculate the transaction percentile rank
         ranges: [2000, 5000, 10000]                           # Defines the duration ranges in milliseconds. For example, 5000 defines the range 0-5000.
