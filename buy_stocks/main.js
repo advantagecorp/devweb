@@ -12,7 +12,8 @@ load.action("Action", async function () {
             	
 	
     const host_0 = load.config.user.args['host']; //`advantageonlinebanking.com`;
-    
+    const protocol = load.config.user.args['protocol'];
+
     let userKey= load.params.key; 
 
     load.WebRequest.defaults.returnBody = false;
@@ -27,7 +28,7 @@ load.action("Action", async function () {
 
     const webRequest1 = new load.WebRequest({
         id: 1,
-        url: `https://${host_0}/`,
+        url: `${protocol}://${host_0}/`,
         method: "GET",
         headers: {
             "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -43,12 +44,12 @@ load.action("Action", async function () {
 
     const webRequest2 = new load.WebRequest({
         id: 2,
-        url: `https://${host_0}/api/currencies?`,
+        url: `${protocol}://${host_0}/api/currencies?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -58,12 +59,12 @@ load.action("Action", async function () {
 
     const webRequest3 = new load.WebRequest({
         id: 3,
-        url: `https://${host_0}/api/stocks/products?`,
+        url: `${protocol}://${host_0}/api/stocks/products?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -73,12 +74,12 @@ load.action("Action", async function () {
 
     const webRequest4 = new load.WebRequest({
         id: 4,
-        url: `https://${host_0}/api/currency`,
+        url: `${protocol}://${host_0}/api/currency`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -92,12 +93,12 @@ load.action("Action", async function () {
 
     const webRequest5 = new load.WebRequest({
         id: 5,
-        url: `https://${host_0}/api/management/bank?`,
+        url: `${protocol}://${host_0}/api/management/bank?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -107,12 +108,12 @@ load.action("Action", async function () {
 
     const webRequest6 = new load.WebRequest({
         id: 6,
-        url: `https://${host_0}/api/stocks/products/BABA`,
+        url: `${protocol}://${host_0}/api/stocks/products/BABA`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -126,12 +127,12 @@ load.action("Action", async function () {
 
     const webRequest7 = new load.WebRequest({
         id: 7,
-        url: `https://${host_0}/api/stocks/products/NVDA`,
+        url: `${protocol}://${host_0}/api/stocks/products/NVDA`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -145,12 +146,12 @@ load.action("Action", async function () {
 
     const webRequest8 = new load.WebRequest({
         id: 8,
-        url: `https://${host_0}/api/stocks/products/AAPL`,
+        url: `${protocol}://${host_0}/api/stocks/products/AAPL`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -170,13 +171,13 @@ load.action("Action", async function () {
 
     const webRequest9 = new load.WebRequest({
         id: 9,
-        url: `https://${host_0}/api/users/login`,
+        url: `${protocol}://${host_0}/api/users/login`,
         method: "POST",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "origin": `https://${host_0}`,
-            "referer": `https://${host_0}/`,
+            "origin": `${protocol}://${host_0}`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -208,13 +209,13 @@ load.action("Action", async function () {
 		
 		    const webRequest10 = new load.WebRequest({
 		        id: 10,
-		        url: `https://${host_0}/api/users`,
+		        url: `${protocol}://${host_0}/api/users`,
 		        method: "POST",
 		        headers: {
 		            "accept": "application/json, text/plain, */*",
 		            "content-type": "application/json",
-		            "origin": `https://${host_0}`,
-		            "referer": `https://${host_0}/`,
+		            "origin": `${protocol}://${host_0}`,
+		            "referer": `${protocol}://${host_0}/`,
 		            "sec-fetch-dest": "empty",
 		            "sec-fetch-mode": "cors",
 		            "sec-fetch-site": "same-origin"
@@ -236,13 +237,13 @@ load.action("Action", async function () {
 		    
 		    const webRequest11 = new load.WebRequest({
 		        id: 11,
-		        url: `https://${host_0}/api/users/login`,
+		        url: `${protocol}://${host_0}/api/users/login`,
 		        method: "POST",
 		        headers: {
 		            "accept": "application/json, text/plain, */*",
 		            "content-type": "application/json",
-		            "origin": `https://${host_0}`,
-		            "referer": `https://${host_0}/`,
+		            "origin": `${protocol}://${host_0}`,
+		            "referer": `${protocol}://${host_0}/`,
 		            "sec-fetch-dest": "empty",
 		            "sec-fetch-mode": "cors",
 		            "sec-fetch-site": "same-origin"
@@ -264,13 +265,13 @@ load.action("Action", async function () {
     
     const webRequest12 = new load.WebRequest({
         id: 12,
-        url: `https://${host_0}/api/accounts?`,
+        url: `${protocol}://${host_0}/api/accounts?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -286,13 +287,13 @@ load.action("Action", async function () {
 
     const webRequest13 = new load.WebRequest({
         id: 13,
-        url: `https://${host_0}/api/accounts/dashboard?`,
+        url: `${protocol}://${host_0}/api/accounts/dashboard?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -302,13 +303,13 @@ load.action("Action", async function () {
 
     const webRequest14 = new load.WebRequest({
         id: 14,
-        url: `https://${host_0}/api/cards?`,
+        url: `${protocol}://${host_0}/api/cards?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -318,13 +319,13 @@ load.action("Action", async function () {
 
     const webRequest15 = new load.WebRequest({
         id: 15,
-        url: `https://${host_0}/api/cards/dashboard?`,
+        url: `${protocol}://${host_0}/api/cards/dashboard?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -334,13 +335,13 @@ load.action("Action", async function () {
 
     const webRequest16 = new load.WebRequest({
         id: 16,
-        url: `https://${host_0}/api/stocks/portfolio/summary?`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio/summary?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -350,13 +351,13 @@ load.action("Action", async function () {
 
     const webRequest17 = new load.WebRequest({
         id: 17,
-        url: `https://${host_0}/api/forecasts/3?`,
+        url: `${protocol}://${host_0}/api/forecasts/3?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -366,13 +367,13 @@ load.action("Action", async function () {
 
     const webRequest18 = new load.WebRequest({
         id: 18,
-        url: `https://${host_0}/api/forecasts/expense/last-month?`,
+        url: `${protocol}://${host_0}/api/forecasts/expense/last-month?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -382,13 +383,13 @@ load.action("Action", async function () {
 
     const webRequest19 = new load.WebRequest({
         id: 19,
-        url: `https://${host_0}/api/currency`,
+        url: `${protocol}://${host_0}/api/currency`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -409,13 +410,13 @@ load.action("Action", async function () {
 
     const webRequest20 = new load.WebRequest({
         id: 20,
-        url: `https://${host_0}/api/currency`,
+        url: `${protocol}://${host_0}/api/currency`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts`,
+            "referer": `${protocol}://${host_0}/accounts`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -429,13 +430,13 @@ load.action("Action", async function () {
 
     const webRequest21 = new load.WebRequest({
         id: 21,
-        url: `https://${host_0}/api/management/demo?`,
+        url: `${protocol}://${host_0}/api/management/demo?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts`,
+            "referer": `${protocol}://${host_0}/accounts`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -445,13 +446,13 @@ load.action("Action", async function () {
 
     const webRequest22 = new load.WebRequest({
         id: 22,
-        url: `https://${host_0}/api/accounts?`,
+        url: `${protocol}://${host_0}/api/accounts?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts`,
+            "referer": `${protocol}://${host_0}/accounts`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -467,13 +468,13 @@ load.action("Action", async function () {
 
     const webRequest23 = new load.WebRequest({
         id: 23,
-        url: `https://${host_0}/api/management/demo?`,
+        url: `${protocol}://${host_0}/api/management/demo?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts/transactions`,
+            "referer": `${protocol}://${host_0}/accounts/transactions`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -483,13 +484,13 @@ load.action("Action", async function () {
 
     const webRequest24 = new load.WebRequest({
         id: 24,
-        url: `https://${host_0}/api/cards?`,
+        url: `${protocol}://${host_0}/api/cards?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts/transactions`,
+            "referer": `${protocol}://${host_0}/accounts/transactions`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -499,13 +500,13 @@ load.action("Action", async function () {
 
     const webRequest25 = new load.WebRequest({
         id: 25,
-        url: `https://${host_0}/api/accounts?`,
+        url: `${protocol}://${host_0}/api/accounts?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts/transactions`,
+            "referer": `${protocol}://${host_0}/accounts/transactions`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -515,13 +516,13 @@ load.action("Action", async function () {
 
     const webRequest26 = new load.WebRequest({
         id: 26,
-        url: `https://${host_0}/api/currency`,
+        url: `${protocol}://${host_0}/api/currency`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts/transactions`,
+            "referer": `${protocol}://${host_0}/accounts/transactions`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -535,13 +536,13 @@ load.action("Action", async function () {
 
     const webRequest27 = new load.WebRequest({
         id: 27,
-        url: `https://${host_0}/api/accounts/${load.extractors['iban']}/transactions`,
+        url: `${protocol}://${host_0}/api/accounts/${load.extractors['iban']}/transactions`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts/transactions`,
+            "referer": `${protocol}://${host_0}/accounts/transactions`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -563,13 +564,13 @@ load.action("Action", async function () {
 
     const webRequest28 = new load.WebRequest({
         id: 28,
-        url: `https://${host_0}/api/currency`,
+        url: `${protocol}://${host_0}/api/currency`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/new-transfer`,
+            "referer": `${protocol}://${host_0}/new-transfer`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -583,13 +584,13 @@ load.action("Action", async function () {
 
     const webRequest29 = new load.WebRequest({
         id: 29,
-        url: `https://${host_0}/api/users/merchants?`,
+        url: `${protocol}://${host_0}/api/users/merchants?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/new-transfer`,
+            "referer": `${protocol}://${host_0}/new-transfer`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -615,13 +616,13 @@ load.action("Action", async function () {
 	
     const webRequest30 = new load.WebRequest({
         id: 30,
-        url: `https://${host_0}/api/accounts?`,
+        url: `${protocol}://${host_0}/api/accounts?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/new-transfer`,
+            "referer": `${protocol}://${host_0}/new-transfer`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -631,13 +632,13 @@ load.action("Action", async function () {
 
 //    const webRequest31 = new load.WebRequest({
 //        id: 31,
-//        url: `https://${host_0}/api/accounts/${load.extractors['iban']}/previous-recipients?`,
+//        url: `${protocol}://${host_0}/api/accounts/${load.extractors['iban']}/previous-recipients?`,
 //        method: "GET",
 //        headers: {
 //            "accept": "application/json, text/plain, */*",
 //            "authorization": `Bearer ${load.extractors['token']}`,
 //            "content-type": "application/json",
-//            "referer": `https://${host_0}/new-transfer`,
+//            "referer": `${protocol}://${host_0}/new-transfer`,
 //            "sec-fetch-dest": "empty",
 //            "sec-fetch-mode": "cors",
 //            "sec-fetch-site": "same-origin"
@@ -647,14 +648,14 @@ load.action("Action", async function () {
 
     const webRequest32 = new load.WebRequest({
         id: 32,
-        url: `https://${host_0}/api/accounts/${load.extractors['iban']}/transactions`,
+        url: `${protocol}://${host_0}/api/accounts/${load.extractors['iban']}/transactions`,
         method: "POST",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "origin": `https://${host_0}`,
-            "referer": `https://${host_0}/new-transfer`,
+            "origin": `${protocol}://${host_0}`,
+            "referer": `${protocol}://${host_0}/new-transfer`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -690,13 +691,13 @@ load.action("Action", async function () {
     
     const webRequest33 = new load.WebRequest({
         id: 33,
-        url: `https://${host_0}/api/currency`,
+        url: `${protocol}://${host_0}/api/currency`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts`,
+            "referer": `${protocol}://${host_0}/accounts`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -710,13 +711,13 @@ load.action("Action", async function () {
 
     const webRequest34 = new load.WebRequest({
         id: 34,
-        url: `https://${host_0}/api/management/demo?`,
+        url: `${protocol}://${host_0}/api/management/demo?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts`,
+            "referer": `${protocol}://${host_0}/accounts`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -726,13 +727,13 @@ load.action("Action", async function () {
 
     const webRequest35 = new load.WebRequest({
         id: 35,
-        url: `https://${host_0}/api/accounts?`,
+        url: `${protocol}://${host_0}/api/accounts?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts`,
+            "referer": `${protocol}://${host_0}/accounts`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -754,13 +755,13 @@ load.action("Action", async function () {
 
     const webRequest36 = new load.WebRequest({
         id: 36,
-        url: `https://${host_0}/api/accounts?`,
+        url: `${protocol}://${host_0}/api/accounts?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -770,13 +771,13 @@ load.action("Action", async function () {
 
     const webRequest37 = new load.WebRequest({
         id: 37,
-        url: `https://${host_0}/api/cards?`,
+        url: `${protocol}://${host_0}/api/cards?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -786,13 +787,13 @@ load.action("Action", async function () {
 
     const webRequest38 = new load.WebRequest({
         id: 38,
-        url: `https://${host_0}/api/cards/dashboard?`,
+        url: `${protocol}://${host_0}/api/cards/dashboard?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -802,13 +803,13 @@ load.action("Action", async function () {
 
     const webRequest39 = new load.WebRequest({
         id: 39,
-        url: `https://${host_0}/api/accounts/dashboard?`,
+        url: `${protocol}://${host_0}/api/accounts/dashboard?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -818,13 +819,13 @@ load.action("Action", async function () {
 
     const webRequest40 = new load.WebRequest({
         id: 40,
-        url: `https://${host_0}/api/stocks/portfolio/summary?`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio/summary?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -834,13 +835,13 @@ load.action("Action", async function () {
 
     const webRequest41 = new load.WebRequest({
         id: 41,
-        url: `https://${host_0}/api/forecasts/3?`,
+        url: `${protocol}://${host_0}/api/forecasts/3?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -850,13 +851,13 @@ load.action("Action", async function () {
 
     const webRequest42 = new load.WebRequest({
         id: 42,
-        url: `https://${host_0}/api/forecasts/expense/last-month?`,
+        url: `${protocol}://${host_0}/api/forecasts/expense/last-month?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -866,13 +867,13 @@ load.action("Action", async function () {
 
     const webRequest43 = new load.WebRequest({
         id: 43,
-        url: `https://${host_0}/api/currency`,
+        url: `${protocol}://${host_0}/api/currency`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/dashboard`,
+            "referer": `${protocol}://${host_0}/dashboard`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -892,13 +893,13 @@ load.action("Action", async function () {
 
     const webRequest44 = new load.WebRequest({
         id: 44,
-        url: `https://${host_0}/api/accounts?`,
+        url: `${protocol}://${host_0}/api/accounts?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts/transactions`,
+            "referer": `${protocol}://${host_0}/accounts/transactions`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -908,13 +909,13 @@ load.action("Action", async function () {
 
     const webRequest45 = new load.WebRequest({
         id: 45,
-        url: `https://${host_0}/api/cards?`,
+        url: `${protocol}://${host_0}/api/cards?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts/transactions`,
+            "referer": `${protocol}://${host_0}/accounts/transactions`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -924,13 +925,13 @@ load.action("Action", async function () {
 
     const webRequest46 = new load.WebRequest({
         id: 46,
-        url: `https://${host_0}/api/currency`,
+        url: `${protocol}://${host_0}/api/currency`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts/transactions`,
+            "referer": `${protocol}://${host_0}/accounts/transactions`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -944,13 +945,13 @@ load.action("Action", async function () {
 
     const webRequest47 = new load.WebRequest({
         id: 47,
-        url: `https://${host_0}/api/management/demo?`,
+        url: `${protocol}://${host_0}/api/management/demo?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts/transactions`,
+            "referer": `${protocol}://${host_0}/accounts/transactions`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -960,13 +961,13 @@ load.action("Action", async function () {
 
     const webRequest48 = new load.WebRequest({
         id: 48,
-        url: `https://${host_0}/api/accounts/${load.extractors['iban']}/transactions`,
+        url: `${protocol}://${host_0}/api/accounts/${load.extractors['iban']}/transactions`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts/transactions`,
+            "referer": `${protocol}://${host_0}/accounts/transactions`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1000,13 +1001,13 @@ load.action("Action", async function () {
 
     const webRequest218 = new load.WebRequest({
         id: 218,
-        url: `https://${host_0}/api/currency`,
+        url: `${protocol}://${host_0}/api/currency`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1020,13 +1021,13 @@ load.action("Action", async function () {
 
     const webRequest219 = new load.WebRequest({
         id: 219,
-        url: `https://${host_0}/api/stocks/watchlist?`,
+        url: `${protocol}://${host_0}/api/stocks/watchlist?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1045,13 +1046,13 @@ load.action("Action", async function () {
     
     const webRequest220 = new load.WebRequest({
         id: 220,
-        url: `https://${host_0}/api/stocks/notinwatchlist?`,
+        url: `${protocol}://${host_0}/api/stocks/notinwatchlist?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1061,13 +1062,13 @@ load.action("Action", async function () {
 
     const webRequest221 = new load.WebRequest({
         id: 221,
-        url: `https://${host_0}/api/stocks/watchlist/prices`,
+        url: `${protocol}://${host_0}/api/stocks/watchlist/prices`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1080,13 +1081,13 @@ load.action("Action", async function () {
 
     const webRequest222 = new load.WebRequest({
         id: 222,
-        url: `https://${host_0}/api/stocks/portfolio/summary?`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio/summary?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1096,13 +1097,13 @@ load.action("Action", async function () {
 
     const webRequest223 = new load.WebRequest({
         id: 223,
-        url: `https://${host_0}/api/stocks/portfolio/week?`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio/week?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1112,13 +1113,13 @@ load.action("Action", async function () {
 
     const webRequest224 = new load.WebRequest({
         id: 224,
-        url: `https://${host_0}/api/stocks/portfolio?`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1128,13 +1129,13 @@ load.action("Action", async function () {
 
     const webRequest225 = new load.WebRequest({
         id: 225,
-        url: `https://${host_0}/api/stocks/portfolio/prices`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio/prices`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1156,13 +1157,13 @@ load.action("Action", async function () {
 
     const webRequest226 = new load.WebRequest({
         id: 226,
-        url: `https://${host_0}/api/currency`,
+        url: `${protocol}://${host_0}/api/currency`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks/`,
+            "referer": `${protocol}://${host_0}/stocks/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1175,13 +1176,13 @@ load.action("Action", async function () {
 
     const webRequest227 = new load.WebRequest({
         id: 227,
-        url: `https://${host_0}/api/stocks/portfolio?`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks/`,
+            "referer": `${protocol}://${host_0}/stocks/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1191,13 +1192,13 @@ load.action("Action", async function () {
 
     const webRequest228 = new load.WebRequest({
         id: 228,
-        url: `https://${host_0}/api/stocks/products/${stock}`, // M
+        url: `${protocol}://${host_0}/api/stocks/products/${stock}`, // M
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${webResponse9.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks/`,
+            "referer": `${protocol}://${host_0}/stocks/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1229,14 +1230,14 @@ load.action("Action", async function () {
 
     const webRequest230 = new load.WebRequest({
         id: 230,
-        url: `https://${host_0}/api/stocks/portfolio/buy`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio/buy`,
         method: "POST",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "origin": `https://${host_0}`,
-            "referer": `https://${host_0}/stocks/M`,
+            "origin": `${protocol}://${host_0}`,
+            "referer": `${protocol}://${host_0}/stocks/M`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1266,13 +1267,13 @@ load.action("Action", async function () {
   	
     const webRequest235 = new load.WebRequest({
         id: 235,
-        url: `https://${host_0}/api/stocks/portfolio/summary?`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio/summary?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1282,13 +1283,13 @@ load.action("Action", async function () {
 
     const webRequest236 = new load.WebRequest({
         id: 236,
-        url: `https://${host_0}/api/stocks/portfolio/week?`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio/week?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1298,13 +1299,13 @@ load.action("Action", async function () {
 
     const webRequest237 = new load.WebRequest({
         id: 237,
-        url: `https://${host_0}/api/stocks/portfolio?`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1335,13 +1336,13 @@ load.action("Action", async function () {
 
     const webRequest239 = new load.WebRequest({
         id: 239,
-        url: `https://${host_0}/api/accounts?`,
+        url: `${protocol}://${host_0}/api/accounts?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/stocks`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1357,14 +1358,14 @@ load.action("Action", async function () {
 
     const webRequest240 = new load.WebRequest({
         id: 240,
-        url: `https://${host_0}/api/stocks/portfolio/sell`,
+        url: `${protocol}://${host_0}/api/stocks/portfolio/sell`,
         method: "POST",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "origin": `https://${host_0}`,
-            "referer": `https://${host_0}/stocks`,
+            "origin": `${protocol}://${host_0}`,
+            "referer": `${protocol}://${host_0}/stocks`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1392,13 +1393,13 @@ load.action("Action", async function () {
 
    const webRequest241 = new load.WebRequest({
         id: 241,
-        url: `https://${host_0}/api/accounts/${load.extractors['iban']}/transactions`,
+        url: `${protocol}://${host_0}/api/accounts/${load.extractors['iban']}/transactions`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "authorization": `Bearer ${load.extractors['token']}`,
             "content-type": "application/json",
-            "referer": `https://${host_0}/accounts/transactions`,
+            "referer": `${protocol}://${host_0}/accounts/transactions`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1429,12 +1430,12 @@ load.action("Action", async function () {
 
     const webRequest49 = new load.WebRequest({
         id: 49,
-        url: `https://${host_0}/api/currencies?`,
+        url: `${protocol}://${host_0}/api/currencies?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1444,12 +1445,12 @@ load.action("Action", async function () {
 
     const webRequest50 = new load.WebRequest({
         id: 50,
-        url: `https://${host_0}/api/stocks/products?`,
+        url: `${protocol}://${host_0}/api/stocks/products?`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1459,12 +1460,12 @@ load.action("Action", async function () {
 
     const webRequest51 = new load.WebRequest({
         id: 51,
-        url: `https://${host_0}/api/stocks/products/BABA`,
+        url: `${protocol}://${host_0}/api/stocks/products/BABA`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1478,12 +1479,12 @@ load.action("Action", async function () {
 
     const webRequest52 = new load.WebRequest({
         id: 52,
-        url: `https://${host_0}/api/stocks/products/NVDA`,
+        url: `${protocol}://${host_0}/api/stocks/products/NVDA`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1497,12 +1498,12 @@ load.action("Action", async function () {
 
     const webRequest53 = new load.WebRequest({
         id: 53,
-        url: `https://${host_0}/api/stocks/products/AAPL`,
+        url: `${protocol}://${host_0}/api/stocks/products/AAPL`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"
@@ -1516,12 +1517,12 @@ load.action("Action", async function () {
 
     const webRequest54 = new load.WebRequest({
         id: 54,
-        url: `https://${host_0}/api/currency`,
+        url: `${protocol}://${host_0}/api/currency`,
         method: "GET",
         headers: {
             "accept": "application/json, text/plain, */*",
             "content-type": "application/json",
-            "referer": `https://${host_0}/`,
+            "referer": `${protocol}://${host_0}/`,
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin"

@@ -65,3 +65,4 @@ thinkTime:
     max: 150
 userArguments:
   host: advantageonlinebanking.com
+  protocol: https
